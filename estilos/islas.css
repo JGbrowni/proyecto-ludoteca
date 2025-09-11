@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-image: url('../img/arena.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+    background-repeat: no-repeat;
+  }
+  
+  /* Botones arriba a la izquierda */
+  .top-left-buttons {
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    display: flex;
+    gap: 20px;
+    z-index: 10;
+    margin: 5px;
+  }
+  
+  .small-btn {
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    color: #3498db;
+    border: none;
+    border-radius: 50%; /*  Esto los hace circulares */
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+  }
+  
+  
+  
+  .small-btn:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Contenedor central horizontal */
+  .main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 40px;
+    padding-top: 60px;
+  }
+  
+  /* Botones redondos laterales */
+  .side-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .circle-btn.large {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: none;
+    background-color: white;
+    color: black;
+    font-size: 38px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
+  
+  .circle-btn.large:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Imagen + botón inferior */
+  .image-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .image-block img {
+    width: 500px;  /*cambiar tamaño de la parte central*/
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  
+  .action-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .action-btn:hover {
+    background-color: #d35400;
+  }
+  
+  /* Imagen desactivada */
+  .image-block.disabled img {
+    opacity: 0.4;
+    filter: grayscale(100%);
+  }
+  
+  .image-block.disabled .action-btn {
+    background-color: gray;
+    cursor: not-allowed;
+  }
+  

@@ -1,0 +1,131 @@
+/* Fondo con imagen */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-image: url('../img/4413922_93055.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+    background-repeat: no-repeat;
+  }
+  
+  /* Contenedor principal */
+  .main-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  /* Botones circulares */
+  .circle-btn {
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.6);
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  
+  .circle-btn:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.9);
+  }
+  
+  /* Tamaños botones superiores*/
+  .circle-btn.small {
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+  }
+
+  .titulo {
+    text-align: center;
+    
+  }
+  
+  .titulo h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: bisque; /* ocultamos el color original del texto  */
+    background-size: cover;
+    background-position: center;
+    background-clip: text;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+  }
+  
+
+  /* Tamaños botones centrales*/
+  .circle-btn.large {
+    width: 200px;
+    height: 200px;
+    font-size: 50px;
+    color: #000;
+    overflow: visible; /* permite que el contenido salga del borde */
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;       /* para el <a> */
+    display: flex;               /* ← Centrar texto*/
+    justify-content: center;     /* ← Centra horizontalmente */
+    align-items: center; 
+    box-shadow: 0 0 6px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+  }
+  
+  
+  .circle-btn.medium {
+    width: 50px;
+    height: 50px;
+  }
+  
+  /* Posición de los botones superiores */
+  .top-left-buttons {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    z-index: 10;
+  }
+  
+  /* Contenedor central de los botones*/
+  .center-buttons {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  
+  /* Contenedor para alinear botones y líneas */
+  .line-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Posicionamiento individual */
+  .btn-line-wrapper {
+    position: absolute;
+    z-index: 5;
+  }
+
+  .btn-img {
+    width: 150%;
+    height: 150%;
+    object-fit: contain; /* puedes usar 'cover' si quieres que llene todo */
+    pointer-events: none;
+  }
+  
+  /* SVG líneas */
+  #lines-svg {
+    position: absolute;
+    top: 0;/* ajusta verticalmente para centrar líneas */
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+    width: 120%; /* ajustar esto si los botones ocupan más/menos espacio */
+    height: 100%; /* altura que cubra la zigzag */
+  }
+  
