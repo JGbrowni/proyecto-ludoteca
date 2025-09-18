@@ -82,3 +82,8 @@ const musicButton = document.getElementById('musicButton');
     function goHome() {
     window.location.href = '../index.html';
   }
+
+  function redirectToPage() {
+      // Redirect to another page (e.g., an about page)
+      window.location.href = '../secciones/niveles.html'; // Or replace with actual URL
+    }

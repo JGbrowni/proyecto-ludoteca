@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../estilos/niveles.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+
+  <title>Mapa de Niveles</title>
+</head>
+<body>
+
+<div class="top-left-buttons">
+  <button id="musicButton" class="music-button" onclick="toggleMusic()">
+    <img id="musicIcon" src="../img/NoMusica.png" alt="Botón de música" style="width:60px; height:60px;">
+  </button>
+  <button id="homeButton" class="music-button" onclick="goHome()">
+    <img src="../img/home.png" alt="Ir al inicio" style="width:60px; height:60px;">
+  </button>
+    <button id="homeButton" class="music-button" onclick="gomap()">
+    <img src="../img/MAPA.png" alt="Ir al mapa" style="width:50px; height:50px;">
+  </button>
+</div>
+
+  <!-- Mapa con 5 niveles -->
+  <div class="map">
+    <div class="levels">
+        <div class="level" onclick="window.location.href='../niveles/nivel1.html'">1</div>
+        <div class="level" onclick="window.location.href='#'">2</div>
+        <div class="level" onclick="window.location.href='#'">3</div>
+        <div class="level" onclick="window.location.href='#'">4</div>
+        <div class="level" onclick="window.location.href='#'">5</div>
+    </div>
+  </div>
+
+      <audio id="backgroundMusic" preload="auto">
+    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script src="../estilos/niveles.js"></script>
+</body>
+</html>
