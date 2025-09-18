@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    background-image: url('../img/arena.jpg');
+    background-image: url('../img/mar.jpg');
     background-size: cover;
     background-position: center;
     font-family: sans-serif;
@@ -87,7 +87,6 @@ body {
     height: 500px;
     object-fit: cover;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   }
   
   .action-btn {
@@ -117,3 +116,22 @@ body {
     cursor: not-allowed;
   }
   
+      .music-button {
+      background: #e24b1d;  /* Fallback for older browsers */
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+    .music-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }

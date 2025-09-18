@@ -10,8 +10,9 @@
 
   <!-- Parte superior izquierda -->
   <div class="top-left-buttons">
-    <button class="small-btn">Music</button>
-    <button class="small-btn">Home</button>
+  <button id="musicButton" class="music-button" onclick="toggleMusic()">
+    <img id="musicIcon" src="../img/NoMusica.png" alt="Botón de música" style="width:60px; height:60px;">
+  </button>
   </div>
 
   <!-- Contenedor central horizontal -->
@@ -24,13 +25,13 @@
 
     <!-- Imagen cuadrada 1 -->
     <div class="image-block">
-      <img src="../img/isla1.jpg" alt="Imagen 1">
+      <img src="../img/mundo1.png" alt="Imagen 1">
       <button class="action-btn">Primer Nivel: <br>Cuentos y Trabalenguas</button>
     </div>
 
     <!-- Imagen cuadrada 2 (opacada) -->
     <div class="image-block disabled">
-      <img src="../img/isla2.jpg" alt="Imagen 2">
+      <img src="../img/mundo2.png" alt="Imagen 2">
       <button class="action-btn" disabled>Bloqueado</button>
     </div>
 
@@ -39,7 +40,12 @@
       <button class="circle-btn large">→</button>
     </div>
 
-  </div>
+      <audio id="backgroundMusic" preload="auto">
+    <source src="https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
+  </div>
+<script src="../estilos/mapa.js"></script>
 </body>
 </html>
