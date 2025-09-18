@@ -5,24 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Landing Page - Descubre Más</title>
   <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="estilos/landing.css">
+  <link rel="stylesheet" href="estilos/landing.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
 
 </head>
 <body>
   <!-- Background Image -->
-  <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a3fdba7c-5314-4539-bdd0-ff755de38643.png" alt="Panoramic view of a serene mountain landscape at sunrise with vibrant colors of orange, pink, and blue skies, towering peaks covered in snow, a sparkling lake in the foreground, and no people, designed for a modern, tranquil landing page background." class="bg-image">
+  <img src="img/landing1.jpg" alt="Panoramic view of a serene mountain landscape at sunrise with vibrant colors of orange, pink, and blue skies, towering peaks covered in snow, a sparkling lake in the foreground, and no people, designed for a modern, tranquil landing page background." class="bg-image">
 
   <!-- Title -->
   <div class="flex justify-center items-center min-h-screen px-4 titulo">
     <div class="text-center">
       <h1 class="title mb-8">Ludoteca interactiva</h1>
-      <button class="center-button" onclick="redirectToPage()">Descubre Más</button>
+      <button class="center-button" onclick="redirectToPage()">Comenzar</button>
     </div>
   </div>
 
   <!-- Music Button -->
   <button id="musicButton" class="music-button" onclick="toggleMusic()">
-    <span id="musicIcon" class="fa">▶️</span> <!-- Using font-awesome style, but since no emojis, wait guidelines say no emojis, so replace -->
+    <img id="musicIcon" src="img/NoMusica.png" alt="Botón de música" style="width:60px; height:60px;">
   </button>
 
   <!-- Audio Element (hidden) -->

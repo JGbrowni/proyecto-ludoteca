@@ -5,7 +5,7 @@ const musicButton = document.getElementById('musicButton');
 
     function redirectToPage() {
       // Redirect to another page (e.g., an about page)
-      window.location.href = '#about'; // Or replace with actual URL
+      window.location.href = 'secciones/islas.html'; // Or replace with actual URL
     }
 
     function toggleMusic() {
@@ -28,3 +28,15 @@ const musicButton = document.getElementById('musicButton');
     musicButton.addEventListener('mouseleave', () => {
       musicButton.style.transform = 'scale(1)';
     });
+
+    function toggleMusic() {
+    const audio = document.getElementById('backgroundMusic');
+    const icon = document.getElementById('musicIcon');
+    if (audio.paused) {
+      audio.play();
+      icon.src = 'img/simusica.png';
+    } else {
+      audio.pause();
+      icon.src = 'img/Nomusica.png';
+    }
+  }
