@@ -9,18 +9,23 @@
 <body>
 
   <!-- Parte superior izquierda -->
-  <div class="top-left-buttons">
+<div class="top-left-buttons">
   <button id="musicButton" class="music-button" onclick="toggleMusic()">
     <img id="musicIcon" src="../img/NoMusica.png" alt="Botón de música" style="width:60px; height:60px;">
   </button>
-  </div>
+  <button id="homeButton" class="music-button" onclick="goHome()">
+    <img src="../img/home.png" alt="Ir al inicio" style="width:60px; height:60px;">
+  </button>
+</div>
 
   <!-- Contenedor central horizontal -->
   <div class="main-container">
 
     <!-- Botón redondo izquierdo -->
     <div class="side-button left">
-      <button class="circle-btn large">←</button>
+      <button class="circle-btn large">
+        <img src="../img/FLECHAIzquierda.png" alt="Ir al inicio" style="width:100px; height:100px;">
+      </button>
     </div>
 
     <!-- Imagen cuadrada 1 -->
@@ -32,12 +37,14 @@
     <!-- Imagen cuadrada 2 (opacada) -->
     <div class="image-block disabled">
       <img src="../img/mundo2.png" alt="Imagen 2">
-      <button class="action-btn" disabled>Bloqueado</button>
+            <button class="action-btn" disabled>Segundo Nivel: <br>Formas geométricas</button>
     </div>
 
     <!-- Botón redondo derecho -->
     <div class="side-button right">
-      <button class="circle-btn large">→</button>
+      <button class="circle-btn large">
+                <img src="../img/FLECHAderecha.png" alt="Ir al inicio" style="width:100px; height:100px;">
+      </button>
     </div>
 
       <audio id="backgroundMusic" preload="auto">

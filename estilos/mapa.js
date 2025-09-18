@@ -39,6 +39,7 @@ const musicButton = document.getElementById('musicButton');
     const musicIcon = document.getElementById('musicIcon');
     const backgroundMusic = document.getElementById('backgroundMusic');
     let isPlaying = false;
+    
 
     function redirectToPage() {
       // Redirect to another page (e.g., an about page)
@@ -76,4 +77,8 @@ const musicButton = document.getElementById('musicButton');
       audio.pause();
       icon.src = '../img/Nomusica.png';
     }
+  }
+
+    function goHome() {
+    window.location.href = '../index.html';
   }
