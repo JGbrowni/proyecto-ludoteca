@@ -55,3 +55,34 @@ body{
 .pop{animation:pop .45s ease} @keyframes pop{0%{transform:scale(.7);opacity:.3}70%{transform:scale(1.06)}100%{transform:scale(1);opacity:1}}
 
 @media (max-width:920px){.layout{grid-template-columns:1fr}.scene{order:2}.story-card{order:1}}
+
+    .music-button {
+      background: #e24b1d;  /* Fallback for older browsers */
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+    .music-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+
+        .top-left-buttons {
+      top: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      gap: 15px;
+    z-index: 1000;
+    }
+

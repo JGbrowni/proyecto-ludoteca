@@ -1,7 +1,7 @@
 window.levels = [
   {
     title: "Nivel 1 — El dragón de colores",
-    image: "assets/escena1.png",
+    image: "assets/dragon2.png",
     parts: [
       "En una cueva vivía un ", {idx:0}, " que se llamaba Draco. ",
       "A Draco le gustaba dibujar ", {idx:1}, " en el muro. ",
@@ -36,7 +36,7 @@ window.levels = [
   },
   {
     title: "Nivel 3 — El cangrejo y su reflejo",
-    image: "assets/escena1.png",
+    image: "assets/cangrejo.jpg",
     parts: [
       "El ", {idx:0}, " ", {idx:1}, " se quedó ", {idx:2}, " al ver su ", {idx:3}, " ", {idx:4}, " en aquel ", {idx:5}, ". "
     ],
@@ -51,7 +51,7 @@ window.levels = [
   },
   {
     title: "Nivel 4 — Trapecistas traviesos",
-    image: "assets/escena1.png",
+    image: "assets/trapecistas.jpg",
     parts: [
       "Tres ", {idx:0}, " ", {idx:1}, ", con tres ", {idx:2}, " troceados, hacen trampas truculentas, ",
       "porque suben al ", {idx:3}, " con ", {idx:4}, ", y no con ", {idx:5}, "."
@@ -67,7 +67,7 @@ window.levels = [
   },
   {
     title: "Nivel 5 — Bruja, brújula y burbuja",
-    image: "assets/escena1.png",
+    image: "assets/Trabalenguas_Bruja.png",
     parts: [
       "Una ", {idx:0}, " tiene una ", {idx:1}, " en una ", {idx:2}, " y con la ", {idx:3}, " embrujada que te ", {idx:4}, "."
     ],

@@ -37,9 +37,19 @@ function buildNarration(){
 }
 function toggleNarration(){
   const state=narrationState();
-  if(state==='idle'){ speak(buildNarration()); $('#readStory').textContent='⏸️ Pausar'; }
-  else if(state==='speaking'){ speechSynthesis.pause(); $('#readStory').textContent='▶️ Reanudar'; }
-  else{ speechSynthesis.resume(); $('#readStory').textContent='⏸️ Pausar'; }
+  if(state==='idle'){ 
+    setCharacter('read');
+    speak(buildNarration()); 
+    $('#readStory').textContent='⏸️ Pausar'; 
+  }
+  else if(state==='speaking'){ 
+    speechSynthesis.pause(); 
+    $('#readStory').textContent='▶️ Reanudar'; 
+  }
+  else{ 
+    speechSynthesis.resume(); 
+    $('#readStory').textContent='⏸️ Pausar'; 
+  }
 }
 
 // Música / reset
@@ -96,6 +106,7 @@ function renderLevel(idx){
 }
 
 // Comprobar
+// Cambiar personaje según resultado al comprobar
 $('#checkAll').addEventListener('click',()=>{
   let allOk=true;
   currentWords.forEach((w,i)=>{
@@ -104,8 +115,17 @@ $('#checkAll').addEventListener('click',()=>{
     if(!ok){ b.classList.add('error'); allOk=false; }
   });
   const fb=$('#feedback');
-  if(allOk){ playOk(); fb.textContent='¡Felicidades!'; speak('¡Lo hiciste muy bien! Sigamos con el siguiente nivel.'); showCongrats(); updateCongratsButton(); }
-  else{ playBad(); fb.textContent='Prueba de nuevo'; speak('Prueba de nuevo'); }
+  if(allOk){
+    playOk(); fb.textContent='¡Felicidades!';
+    setCharacter('happy');
+    speak('¡Lo hiciste muy bien! Sigamos con el siguiente nivel.');
+    showCongrats(); updateCongratsButton();
+  }
+  else{
+    playBad(); fb.textContent='Prueba de nuevo';
+    setCharacter('sad');
+    speak('Prueba de nuevo');
+  }
 });
 
 $('#clearStory').addEventListener('click',()=>{ renderLevel(currentLevel); $('#feedback').textContent=''; });
@@ -122,3 +142,60 @@ $('#nextLevel').addEventListener('click',()=>{
 
 // Init
 renderLevel(currentLevel);
+
+
+
+
+function setCharacter(state) {
+  const img = $('#characterImg');
+  if (!img) return;
+  if (state === 'read') img.src = 'assets/leyendo.png';
+  else if (state === 'happy') img.src = 'assets/aprobado.png';
+  else if (state === 'sad') img.src = 'assets/repite.png';
+}
+
+function toggleMusic() {
+      if (isPlaying) {
+        backgroundMusic.pause();
+        musicIcon.textContent = '▶️'; // Replace emoji with text if needed, but per guidelines, avoid
+        // Actually, to follow, don't use ▶️; use text or image. Let's change to | |
+        musicIcon.textContent = '||'; // Pause symbol
+      } else {
+        backgroundMusic.play();
+        musicIcon.textContent = '►'; // Play symbol
+      }
+      isPlaying = !isPlaying;
+    }
+
+    // Add hover effect description - but since it's CSS, already handled
+    musicButton.addEventListener('mouseenter', () => {
+      musicButton.style.transform = 'scale(1.1)';
+    });
+    musicButton.addEventListener('mouseleave', () => {
+      musicButton.style.transform = 'scale(1)';
+    });
+
+    function toggleMusic() {
+    const audio = document.getElementById('backgroundMusic');
+    const icon = document.getElementById('musicIcon');
+    if (audio.paused) {
+      audio.play();
+      icon.src = '../img/simusica.png';
+    } else {
+      audio.pause();
+      icon.src = '../img/Nomusica.png';
+    }
+  }
+
+      function goHome() {
+    window.location.href = '../index.html'; // Or replace with actual URL
+  }
+
+  function redirectToPage() {
+      // Redirect to another page (e.g., an about page)
+      window.location.href = '../secciones/niveles.html'; // Or replace with actual URL
+    }
+
+    function gomap() {
+      window.location.href = '../secciones/niveles.html'; // Or replace with actual URL
+    }
