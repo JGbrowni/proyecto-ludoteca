@@ -55,6 +55,7 @@
     .level {
       width: 150px;
       height: 150px;
+      border: 8px solid #ffffff;
       border-radius: 50%;
       background: #ffcf4d;
       display: flex;
@@ -83,6 +84,7 @@
       margin: 2rem;
       top: 20px;
       right: 20px;
+      
       display: flex;
       flex-direction: row;
       align-items: flex-end;
