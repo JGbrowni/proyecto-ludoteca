@@ -135,3 +135,106 @@ body {
       transform: scale(1.1);
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
     }
+
+    /* --- RESPONSIVE DESIGN --- */
+
+/* Tablets (pantallas medianas) */
+@media (max-width: 1024px) {
+  .main-container {
+    flex-wrap: wrap;
+  }
+
+ 
+  .circle-btn.large {
+    width: 100px;
+    height: 100px;
+  }
+
+  .top-left-buttons {
+    top: 10px;
+    left: 10px;
+    gap: 10px;
+  }
+
+  .music-button {
+    width: 90px;
+    height: 90px;
+  }
+
+  .music-button img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Móviles (pantallas pequeñas) */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    height: auto;
+  }
+
+  .image-block img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .circle-btn.large {
+    width: 80px;
+    height: 80px;
+  }
+
+  .action-btn {
+    font-size: 14px;
+    text-align: center;
+    padding: 8px 12px;
+  }
+
+  .top-left-buttons {
+    flex-direction: row;
+    top: 10px;
+    left: 10px;
+    gap: 10px;
+  }
+
+  .music-button {
+    width: 50px;
+    height: 50px;
+  }
+
+  .music-button img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Teléfonos muy pequeños (extra small devices) */
+@media (max-width: 480px) {
+  .image-block img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .circle-btn.large {
+    width: 60px;
+    height: 60px;
+  }
+
+  .action-btn {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .music-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .music-button img {
+    width: 25px;
+    height: 25px;
+  }
+}
