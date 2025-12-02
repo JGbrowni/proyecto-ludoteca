@@ -119,6 +119,7 @@ $('#checkAll').addEventListener('click',()=>{
     playOk(); fb.textContent='¡Felicidades!';
     setCharacter('happy');
     speak('¡Lo hiciste muy bien! Sigamos con el siguiente nivel.');
+    localStorage.setItem('completedLevels', JSON.stringify({ level1: true, level2: localStorage.getItem('completedLevels') ? JSON.parse(localStorage.getItem('completedLevels')).level2 : false }));
     showCongrats(); updateCongratsButton();
   }
   else{

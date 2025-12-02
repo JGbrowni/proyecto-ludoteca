@@ -30,8 +30,9 @@
 
   <main class="layout">
     <aside class="scene" aria-label="Ilustración">
-      <img id="sceneImg" src="assets/escena1.png" alt="Ilustración" class="scene-img">
-      <img id="characterImg" src="assets/leyendo.png" alt="Personaje" style="width:450px;position:absolute;bottom:0px;right:0px;">
+      <div class="scene-container">
+        <img id="sceneImg" src="assets/escena1.png" alt="Ilustración" class="scene-img">
+      </div>
     </aside>
 
     <section class="story-card" aria-labelledby="titulo">
@@ -56,6 +57,12 @@
         </div>
       </div>
     </section>
+
+    <aside class="character-panel" aria-label="Personaje">
+      <div class="character-container">
+        <img id="characterImg" src="assets/leyendo.png" alt="Personaje" class="character-img">
+      </div>
+    </aside>
   </main>
 
   <audio id="bgm" loop src="assets/bg-music.mp3" preload="auto"></audio>

@@ -1,22 +1,27 @@
-body {
+* {
+    box-sizing: border-box;
+  }
+
+  body {
     margin: 0;
+    padding: 0;
     font-family: "Lilita One", sans-serif;
     background-image: url('../img/mar.jpg');
     background-size: cover;
     background-position: center;
-    font-family: sans-serif;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
   }
   
   /* Botones arriba a la izquierda */
   .top-left-buttons {
-    position: absolute;
+    position: fixed;
     top: 20px;
-    left: 50px;
+    left: 20px;
     display: flex;
-    gap: 20px;
+    gap: 15px;
     z-index: 10;
-    margin: 5px;
   }
   
   .small-btn {
@@ -46,10 +51,28 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    gap: 40px;
-    padding-top: 60px;
+    min-height: 100vh;
+    gap: 30px;
+    padding: 80px 20px 40px 20px;
   }
+
+  /* Carrusel */
+  .carousel-container {
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.5s ease-in-out;
+    width: fit-content;
+  }
+
+  .carousel-track.slide-0 { transform: translateX(0); }
+  .carousel-track.slide-1 { transform: translateX(calc(-50% - 15px)); }
+  .carousel-track.slide-2 { transform: translateX(0); }
   
   /* Botones redondos laterales */
   .side-button {
@@ -79,30 +102,36 @@ body {
   .image-block {
     display: flex;
     flex-direction: column;
+      flex: 0 0 50%;
+      position: relative;
     align-items: center;
   }
   
   .image-block img {
-    width: 500px;  /*cambiar tamaño de la parte central*/
-    height: 500px;
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    aspect-ratio: 1;
     object-fit: cover;
     border-radius: 10px;
   }
   
   .action-btn {
-    margin-top: 10px;
-    padding: 10px 20px;
+    margin-top: 15px;
+    padding: 12px 25px;
     background-color: #e67e22;
     color: white;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     font-weight: bold;
-    transition: background-color 0.3s;
+    font-size: 14px;
+    transition: background-color 0.3s, transform 0.2s;
   }
   
   .action-btn:hover {
     background-color: #d35400;
+    transform: scale(1.05);
   }
   
   /* Imagen desactivada */
@@ -110,28 +139,143 @@ body {
     opacity: 0.4;
     filter: grayscale(100%);
   }
-  
+
   .image-block.disabled .action-btn {
-    background-color: gray;
+    background-color: #95a5a6;
     cursor: not-allowed;
   }
-  
-      .music-button {
-      background: #e24b1d;  /* Fallback for older browsers */
+
+  .image-block.disabled .action-btn:hover {
+    background-color: #7f8c8d;
+    transform: none;
+  }
+
+  .lock-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    z-index: 5;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+
+  .image-block {
+    position: relative;
+  }  .music-button {
+    background: #e24b1d;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    padding: 0;
+  }
+
+  .music-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Media queries para responsive */
+  @media (max-width: 768px) {
+    .carousel-container {
+      max-width: 800px;
+    }
+
+    .carousel-track {
+      gap: 20px;
+    }
+
+    .carousel-track.slide-0 { transform: translateX(0); }
+    .carousel-track.slide-1 { transform: translateX(calc(-50% - 10px)); }
+    .carousel-track.slide-2 { transform: translateX(0); }
+
+    .main-container {
+      gap: 20px;
+      padding: 80px 15px 30px 15px;
+    }
+
+    .circle-btn.large {
+      width: 100px;
+      height: 100px;
+      font-size: 28px;
+    }
+
+    .image-block img {
+      max-width: 350px;
+    }
+
+    .action-btn {
+      padding: 10px 18px;
+      font-size: 13px;
+    }
+
+    .music-button {
+      width: 60px;
+      height: 60px;
+    }
+
+    .music-button img {
+      width: 45px !important;
+      height: 45px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .carousel-container {
+      max-width: 400px;
+    }
+
+    .carousel-track {
+      gap: 15px;
+    }
+
+    .carousel-track.slide-0 { transform: translateX(0); }
+    .carousel-track.slide-1 { transform: translateX(calc(-50% - 7.5px)); }
+    .carousel-track.slide-2 { transform: translateX(0); }
+
+    .main-container {
+      flex-direction: column;
+      gap: 15px;
+      padding: 70px 10px 20px 10px;
+    }
+
+    .side-button {
+      display: none;
+    }
+
+    .image-block img {
+      max-width: 280px;
       width: 80px;
       height: 80px;
-      border-radius: 50%;
-      border: none;
-      cursor: pointer;
-      bottom: 20px;
-      right: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-      transition: all 0.3s ease;
+      font-size: 22px;
     }
-    .music-button:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+
+    .action-btn {
+      padding: 10px 15px;
+      font-size: 12px;
+      margin-top: 10px;
     }
+
+    .music-button {
+      width: 55px;
+      height: 55px;
+    }
+
+    .music-button img {
+      width: 40px !important;
+      height: 40px !important;
+    }
+
+    .top-left-buttons {
+      gap: 10px;
+      left: 10px;
+      top: 10px;
+    }
+  }

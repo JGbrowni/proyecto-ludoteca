@@ -26,35 +26,54 @@
   <!-- Contenedor central horizontal -->
   <div class="main-container">
 
-    <!-- Botón redondo izquierdo -->
+    <!-- Botón flecha izquierda -->
     <div class="side-button left">
-      <button class="circle-btn large">
-        <img src="../img/FLECHAIzquierda.png" alt="Ir al inicio" style="width:100px; height:100px;">
+      <button class="circle-btn large" onclick="moveCarouselLeft()">
+        <img src="../img/FLECHAIzquierda.png" alt="Ir a la izquierda" style="width:100px; height:100px;">
       </button>
     </div>
 
-    <!-- Imagen cuadrada 1 -->
-    <div class="image-block">
-      <img src="../img/mundo1.png" alt="Imagen 1">
-      <button class="action-btn" onclick="redirectToPage()">Primer Nivel: <br>Cuentos y Trabalenguas</button>
+    <!-- Contenedor del carrusel -->
+    <div class="carousel-container">
+      <div class="carousel-track">
+        <!-- Isla 1: Cuentos y Trabalenguas -->
+        <div class="image-block">
+          <img src="../img/mundo1.png" alt="Isla 1">
+          <button class="action-btn" onclick="redirectToPage()">Primer Nivel: <br>Cuentos y Trabalenguas</button>
+        </div>
+
+        <!-- Isla 2: Formas geométricas -->
+        <div class="image-block">
+          <img src="../img/isla numero.png" alt="Isla 2">
+          <button class="action-btn" onclick="redirectToNiveles2()">Segundo Nivel: <br>Numeros</button>
+        </div>
+
+        <!-- Isla 3: Bloqueada -->
+        <div class="image-block disabled" id="island-3">
+          <img src="../img/mundo2.png" alt="Isla 3">
+          <button class="action-btn" onclick="showLockedMessage()">Tercer Nivel: <br>Bloqueado</button>
+          <div class="lock-overlay">🔒</div>
+        </div>
+
+        <!-- Isla 4: Bloqueada -->
+        <div class="image-block disabled" id="island-4">
+          <img src="../img/animales.png" alt="Isla 4">
+          <button class="action-btn" onclick="showLockedMessage()">Cuarto Nivel: <br>Bloqueado</button>
+          <div class="lock-overlay">🔒</div>
+        </div>
+      </div>
     </div>
 
-    <!-- Imagen cuadrada 2 (opacada) -->
-    <div class="image-block disabled">
-      <img src="../img/mundo2.png" alt="Imagen 2">
-            <button class="action-btn" disabled>Segundo Nivel: <br>Formas geométricas</button>
-    </div>
-
-    <!-- Botón redondo derecho -->
+    <!-- Botón flecha derecha -->
     <div class="side-button right">
-      <button class="circle-btn large">
-                <img src="../img/FLECHAderecha.png" alt="Ir al inicio" style="width:100px; height:100px;">
+      <button class="circle-btn large" onclick="moveCarouselRight()">
+        <img src="../img/FLECHAderecha.png" alt="Ir a la derecha" style="width:100px; height:100px;">
       </button>
     </div>
 
-        <audio id="backgroundMusic" loop src="../img/bg-music.mp3" preload="auto" preload="auto">
-    Your browser does not support the audio element.
-  </audio>
+    <audio id="backgroundMusic" loop src="../img/bg-music.mp3" preload="auto">
+      Your browser does not support the audio element.
+    </audio>
 
   </div>
 <script src="../estilos/mapa.js"></script>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ludolita World | numbers levels </title>
+  <link rel="shortcut icon" href="../img/cara.png" />
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="top-left-buttons">
+  <button id="homeButton" class="music-button" onclick="goHome()">
+    <img src="../img/home.png" alt="Ir al inicio" style="width:60px; height:60px;">
+  </button>
+    <button id="homeButton" class="music-button" onclick="gomap()">
+    <img src="../img/MAPA.png" alt="Ir al mapa" style="width:50px; height:50px;">
+  </button>
+</div>
+    <nav class="controls-bar" aria-label="Controles">
+      <label class="vol-wrap" for="vol" title="Volumen">
+        🔉
+        <input id="vol" type="range" min="0" max="1" step="0.05" value="0.2" aria-label="Volumen">
+      </label>
+      <button id="toggleMusic" class="pill">🔊 </button>
+      <button id="readStory" class="pill secondary">🗣️ Leer</button>
+      <button id="resetAll" class="pill">🔁 Reiniciar</button>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <aside class="scene" aria-label="Ilustración">
+      <div class="scene-container">
+        <img id="sceneImg" src="assets/escena1.png" alt="Ilustración" class="scene-img">
+      </div>
+    </aside>
+
+    <section class="story-card" aria-labelledby="titulo">
+      <h2 id="titulo">Nivel 1 — El dragón de colores</h2>
+
+      <p id="storyText" class="story"></p>
+
+      <div id="optionPanel" class="option-panel" hidden aria-live="polite"></div>
+
+      <div class="action-row">
+        <button id="checkAll" class="btn ok">✅ Comprobar</button>
+        <button id="clearStory" class="btn neutral">🧽 Limpiar</button>
+      </div>
+
+      <p id="feedback" class="feedback" aria-live="polite"></p>
+
+      <div id="congrats" class="congrats hidden" role="dialog" aria-modal="true" aria-labelledby="fel-title">
+        <div class="fel-box">
+          <h3 id="fel-title">¡FELICITACIONES!</h3>
+          <p class="fel-msg">¡Lo hiciste muy bien! Sigamos con el siguiente nivel.</p>
+          <button id="nextLevel" class="btn next">Siguiente nivel</button>
+        </div>
+      </div>
+    </section>
+
+    <aside class="character-panel" aria-label="Personaje">
+      <div class="character-container">
+        <img id="characterImg" src="assets/leyendo.png" alt="Personaje" class="character-img">
+      </div>
+    </aside>
+  </main>
+
+  <audio id="bgm" loop src="assets/bg-music.mp3" preload="auto"></audio>
+  <audio id="sOk" src="assets/correct.mp3" preload="auto"></audio>
+  <audio id="sBad" src="assets/wrong.mp3" preload="auto"></audio>
+
+  <script src="js/levels.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

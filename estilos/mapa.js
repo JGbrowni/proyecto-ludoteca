@@ -35,10 +35,69 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener("resize", drawLines);
 });
 
-const musicButton = document.getElementById('musicButton');
-    const musicIcon = document.getElementById('musicIcon');
-    const backgroundMusic = document.getElementById('backgroundMusic');
-    let isPlaying = false;
+// Sistema de carrusel y bloqueo de niveles
+let currentSlide = 0;
+const totalSlides = 2; // 0: islas 1-2, 1: islas 3-4
+const carouselContainer = document.querySelector('.carousel-container');
+const carouselTrack = document.querySelector('.carousel-track');
+let slideWidth = carouselContainer ? carouselContainer.clientWidth : 0;
+let completedLevels = JSON.parse(localStorage.getItem('completedLevels')) || { level1: false, level2: false };
+
+function updateCarousel() {
+  if (!carouselTrack || !carouselContainer) return;
+  // recalcular ancho por si hay cambios de tamaño
+  slideWidth = carouselContainer.clientWidth;
+  const offset = -currentSlide * slideWidth;
+  carouselTrack.style.transform = `translateX(${offset}px)`;
+}
+
+function moveCarouselLeft() {
+  if (!carouselTrack) return;
+  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides; // wrap
+  updateCarousel();
+}
+
+function moveCarouselRight() {
+  if (!carouselTrack) return;
+  currentSlide = (currentSlide + 1) % totalSlides; // wrap
+  updateCarousel();
+}
+
+// actualizar en resize para mantener cálculo correcto
+window.addEventListener('resize', () => {
+  if (!carouselContainer) return;
+  slideWidth = carouselContainer.clientWidth;
+  updateCarousel();
+});
+
+function showLockedMessage() {
+  const bothComplete = completedLevels.level1 && completedLevels.level2;
+  if (!bothComplete) {
+    alert('🔒 Debes completar los dos primeros niveles para desbloquear este contenido');
+  }
+}
+
+function unlockIslands() {
+  completedLevels.level1 = true;
+  completedLevels.level2 = true;
+  localStorage.setItem('completedLevels', JSON.stringify(completedLevels));
+  
+  const island3 = document.getElementById('island-3');
+  const island4 = document.getElementById('island-4');
+  
+  if (island3) island3.classList.remove('disabled');
+  if (island4) island4.classList.remove('disabled');
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  if (completedLevels.level1 && completedLevels.level2) {
+    const island3 = document.getElementById('island-3');
+    const island4 = document.getElementById('island-4');
+    
+    if (island3) island3.classList.remove('disabled');
+    if (island4) island4.classList.remove('disabled');
+  }
+});
     
 
     function redirectToPage() {
@@ -46,26 +105,6 @@ const musicButton = document.getElementById('musicButton');
       window.location.href = 'secciones/islas.html'; // Or replace with actual URL
     }
 
-    function toggleMusic() {
-      if (isPlaying) {
-        backgroundMusic.pause();
-        musicIcon.textContent = '▶️'; // Replace emoji with text if needed, but per guidelines, avoid
-        // Actually, to follow, don't use ▶️; use text or image. Let's change to | |
-        musicIcon.textContent = '||'; // Pause symbol
-      } else {
-        backgroundMusic.play();
-        musicIcon.textContent = '►'; // Play symbol
-      }
-      isPlaying = !isPlaying;
-    }
-
-    // Add hover effect description - but since it's CSS, already handled
-    musicButton.addEventListener('mouseenter', () => {
-      musicButton.style.transform = 'scale(1.1)';
-    });
-    musicButton.addEventListener('mouseleave', () => {
-      musicButton.style.transform = 'scale(1)';
-    });
 
     function toggleMusic() {
     const audio = document.getElementById('backgroundMusic');
@@ -84,6 +123,9 @@ const musicButton = document.getElementById('musicButton');
   }
 
   function redirectToPage() {
-      // Redirect to another page (e.g., an about page)
-      window.location.href = '../secciones/niveles.html'; // Or replace with actual URL
+      window.location.href = '../secciones/niveles.html';
+    }
+
+    function redirectToNiveles2() {
+      window.location.href = '../secciones/niveles2.html';
     }
