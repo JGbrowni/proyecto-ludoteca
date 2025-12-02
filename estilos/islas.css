@@ -144,138 +144,23 @@
     background-color: #95a5a6;
     cursor: not-allowed;
   }
-
-  .image-block.disabled .action-btn:hover {
-    background-color: #7f8c8d;
-    transform: none;
-  }
-
-  .lock-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 60px;
-    z-index: 5;
-    text-shadow: 0 0 10px rgba(0,0,0,0.5);
-  }
-
-  .image-block {
-    position: relative;
-  }  .music-button {
-    background: #e24b1d;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-    padding: 0;
-  }
-
-  .music-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-  }
-
-  /* Media queries para responsive */
-  @media (max-width: 768px) {
-    .carousel-container {
-      max-width: 800px;
-    }
-
-    .carousel-track {
-      gap: 20px;
-    }
-
-    .carousel-track.slide-0 { transform: translateX(0); }
-    .carousel-track.slide-1 { transform: translateX(calc(-50% - 10px)); }
-    .carousel-track.slide-2 { transform: translateX(0); }
-
-    .main-container {
-      gap: 20px;
-      padding: 80px 15px 30px 15px;
-    }
-
-    .circle-btn.large {
-      width: 100px;
-      height: 100px;
-      font-size: 28px;
-    }
-
-    .image-block img {
-      max-width: 350px;
-    }
-
-    .action-btn {
-      padding: 10px 18px;
-      font-size: 13px;
-    }
-
-    .music-button {
-      width: 60px;
-      height: 60px;
-    }
-
-    .music-button img {
-      width: 45px !important;
-      height: 45px !important;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .carousel-container {
-      max-width: 400px;
-    }
-
-    .carousel-track {
-      gap: 15px;
-    }
-
-    .carousel-track.slide-0 { transform: translateX(0); }
-    .carousel-track.slide-1 { transform: translateX(calc(-50% - 7.5px)); }
-    .carousel-track.slide-2 { transform: translateX(0); }
-
-    .main-container {
-      flex-direction: column;
-      gap: 15px;
-      padding: 70px 10px 20px 10px;
-    }
-
-    .side-button {
-      display: none;
-    }
-
-    .image-block img {
-      max-width: 280px;
+  
+      .music-button {
+      background: #e24b1d;  /* Fallback for older browsers */
       width: 80px;
       height: 80px;
-      font-size: 22px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
     }
-
-    .action-btn {
-      padding: 10px 15px;
-      font-size: 12px;
-      margin-top: 10px;
+    .music-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
     }
-
-    .music-button {
-      width: 55px;
-      height: 55px;
-    }
-
-    .music-button img {
-      width: 40px !important;
-      height: 40px !important;
-    }
-
-    .top-left-buttons {
-      gap: 10px;
-      left: 10px;
-      top: 10px;
-    }
-  }
