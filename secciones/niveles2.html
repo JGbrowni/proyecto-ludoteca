@@ -24,6 +24,26 @@
   </button>
 </div>
 
+<!-- Botón hamburguesa (visible en móvil) -->
+<button id="hamburgerBtn" class="hamburger-btn" aria-label="Abrir menú" aria-expanded="false" onclick="toggleMobileMenu()">
+  <span class="bar bar-1" aria-hidden="true"></span>
+  <span class="bar bar-2" aria-hidden="true"></span>
+  <span class="bar bar-3" aria-hidden="true"></span>
+</button>
+
+<!-- Menú móvil: contiene los mismos iconos que arriba, mantiene funciones -->
+<div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+  <button class="mobile-menu-item" onclick="toggleMusic(); toggleMobileMenu();" aria-label="Música">
+    <img id="mobileMusicIcon" src="../img/NoMusica.png" alt="Música" style="width:48px; height:48px;">
+  </button>
+  <button class="mobile-menu-item" onclick="goHome(); toggleMobileMenu();" aria-label="Inicio">
+    <img src="../img/home.png" alt="Inicio" style="width:48px; height:48px;">
+  </button>
+  <button class="mobile-menu-item" onclick="gomap(); toggleMobileMenu();" aria-label="Mapa">
+    <img src="../img/MAPA.png" alt="Mapa" style="width:48px; height:48px;">
+  </button>
+</div>
+
   <!-- Mapa con 5 niveles -->
   <div class="map">
     <div class="levels">
@@ -40,5 +60,6 @@
   </audio>
 
   <script src="../estilos/niveles2.js"></script>
+  <script src="../estilos/mapa.js"></script>
 </body>
 </html>

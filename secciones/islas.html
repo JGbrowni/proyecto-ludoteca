@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ludolita World | Islas </title>
   <link rel="shortcut icon" href="../img/cara.png" />
   <link rel="stylesheet" href="../estilos/islas.css">
@@ -20,6 +21,23 @@
   </button>
   <button id="homeButton" class="music-button" onclick="goHome()">
     <img src="../img/home.png" alt="Ir al inicio" style="width:60px; height:60px;">
+  </button>
+</div>
+
+<!-- Botón hamburguesa (visible en móvil) -->
+<button id="hamburgerBtn" class="hamburger-btn" aria-label="Abrir menú" aria-expanded="false" onclick="toggleMobileMenu()">
+  <span class="bar bar-1" aria-hidden="true"></span>
+  <span class="bar bar-2" aria-hidden="true"></span>
+  <span class="bar bar-3" aria-hidden="true"></span>
+</button>
+
+<!-- Menú móvil: contiene los mismos iconos que arriba, mantiene funciones -->
+<div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+  <button class="mobile-menu-item" onclick="toggleMusic(); toggleMobileMenu();" aria-label="Música">
+    <img id="mobileMusicIcon" src="../img/NoMusica.png" alt="Música" style="width:48px; height:48px;">
+  </button>
+  <button class="mobile-menu-item" onclick="goHome(); toggleMobileMenu();" aria-label="Inicio">
+    <img src="../img/home.png" alt="Inicio" style="width:48px; height:48px;">
   </button>
 </div>
 
